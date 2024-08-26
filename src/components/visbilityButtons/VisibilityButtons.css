@@ -1,0 +1,62 @@
+.visibility-buttons-container {
+  width: 100%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.visibility-button {
+  padding: 0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 75px;
+  display: flex;
+  background-color: white;
+}
+
+.visibility-button_circle {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.visibility-button_circle__element {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-top: 7px;
+}
+
+.visibility-button_text {
+  width: 75%;
+  height: 100%;
+  display: grid;
+  font-size: 14px;
+  text-align: left;
+  align-content: space-evenly;
+}
+
+.visibility-button_text-title {
+  color: #00629b;
+  font-weight: bold;
+}
+
+.visibility-button_text-temp {
+  font-weight: bold;
+}
+
+.visibility-button_text-extra {
+  color: #b1b2b3;
+}
+
+.visibility-button_icon {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3381af;
+}
