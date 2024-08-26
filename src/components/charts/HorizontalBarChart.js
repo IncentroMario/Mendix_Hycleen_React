@@ -17,9 +17,9 @@ const transformData = (data) => {
 
 const formatTooltip = (params, colors) => {
   const minTemp = params[0]?.value;
-  if (minTemp === undefined) return "";
+  if (!minTemp) return "";
 
-  const range = params[1]?.value ?? 0;
+  const range = params[1]?.value;
   const maxTemp = minTemp + range;
   const avgTemp = params[3]?.value;
 
@@ -123,7 +123,7 @@ const HorizontalBarChart = ({ data, visibleBars, colors }) => {
             color: "transparent", // Barra invisible para la posición inicial
           },
           data: visibleBars.map((isVisible, index) =>
-            isVisible ? minValues[index] : 0
+            isVisible ? minValues[index] : false
           ),
         },
         {
@@ -134,7 +134,7 @@ const HorizontalBarChart = ({ data, visibleBars, colors }) => {
             color: (params) => colors[params.dataIndex], // Aplicar color basado en el índice de datos
           },
           data: visibleBars.map((isVisible, index) =>
-            isVisible ? ranges[index] : 0
+            isVisible ? ranges[index] : false
           ),
         },
         {
@@ -149,7 +149,7 @@ const HorizontalBarChart = ({ data, visibleBars, colors }) => {
             scale: false,
           },
           data: visibleBars.map((isVisible, index) =>
-            isVisible ? minValues[index] : null
+            isVisible ? minValues[index] : false
           ),
         },
         {
@@ -164,7 +164,7 @@ const HorizontalBarChart = ({ data, visibleBars, colors }) => {
             scale: false,
           },
           data: visibleBars.map((isVisible, index) =>
-            isVisible ? avgValues[index] : null
+            isVisible ? avgValues[index] : false
           ),
         },
         {
@@ -179,7 +179,7 @@ const HorizontalBarChart = ({ data, visibleBars, colors }) => {
             scale: false,
           },
           data: visibleBars.map((isVisible, index) =>
-            isVisible ? maxTemp[index] : null
+            isVisible ? maxTemp[index] : false
           ),
         },
       ],
