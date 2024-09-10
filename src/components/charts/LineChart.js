@@ -19,12 +19,7 @@ const transformData = (data, colors, visibleBars) => {
   return { dates, series };
 };
 
-const formatTooltip = (
-  params,
-  dates,
-  visibleBars,
-  dataOnHorizontalAxisEach
-) => {
+const formatTooltip = (params, dates, visibleBars) => {
   const date = dates[params[0]?.dataIndex] || "No Date";
 
   const tooltips = params
