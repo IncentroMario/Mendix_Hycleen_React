@@ -81,10 +81,10 @@ class ChartData {
         name: "Sensor 9",
         avgTemp: generateRandomData(90),
       },
-      {
-        name: "Sensor 10",
-        avgTemp: generateRandomData(90),
-      },
+      // {
+      //   name: "Sensor 10",
+      //   avgTemp: generateRandomData(90),
+      // },
     ],
   };
 }

@@ -35,7 +35,7 @@ const formatTooltip = (params, dates, visibleBars) => {
   `;
 };
 
-const LineChart = ({ data, visibleBars, colors }) => {
+const LineChart = ({ data, visibleBars, colors, dataOnHorizontalAxisEach }) => {
   const { dates, series } = useMemo(
     () => transformData(data, colors, visibleBars),
     [data, colors, visibleBars]
@@ -58,9 +58,9 @@ const LineChart = ({ data, visibleBars, colors }) => {
         type: "category",
         data: dates,
         axisLabel: {
-          rotate: 45,
+          // rotate: 45,
           formatter: (value, index) => {
-            return index % 3 === 0 ? value : "";
+            return index % dataOnHorizontalAxisEach === 0 ? value : ""; //Esto muestra la leyenda del eje X cada N elementos. Lo su
           },
         },
         axisTick: {
@@ -69,6 +69,10 @@ const LineChart = ({ data, visibleBars, colors }) => {
       },
       yAxis: {
         type: "value",
+      },
+      grid: {
+        left: "40px",
+        right: "0",
       },
       series: series.map((item, index) => ({
         ...item,
@@ -84,9 +88,7 @@ const LineChart = ({ data, visibleBars, colors }) => {
   );
 
   return (
-    <div>
-      <ReactECharts option={options} style={{ height: 400, width: "100%" }} />
-    </div>
+    <ReactECharts option={options} style={{ height: 400, width: "100%" }} />
   );
 };
 

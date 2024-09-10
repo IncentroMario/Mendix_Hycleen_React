@@ -57,7 +57,7 @@ const HorizontalBarChart = ({ data, visibleBars, colors }) => {
         show: true,
         backgroundColor: "#f7f7fc",
         left: "15%",
-        right: "5%",
+        right: "0",
         top: "15%",
         bottom: "5%",
       },
